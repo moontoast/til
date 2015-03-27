@@ -1,10 +1,8 @@
-#Today I learned
+## How to Customize the virtualenv Info in Your `PS1`
 
-##How to add the current active virtual environment to my bash prompt
+Start by adding this function to your `.bash_profile` or `.bashrc` file:
 
-###Start by adding this function to your bash profile.
-
-```
+```sh
 function virtualenv_info() {
     # Get Virtual Env
     if [[ -n "$VIRTUAL_ENV" ]]; then
@@ -18,20 +16,16 @@ function virtualenv_info() {
 }
 ```
 
-###Then we disable the normal functionality of virtualenvwrapper so that it plays nice with git
+Then we disable the normal functionality of virtualenvwrapper so that it plays nice with git, and create a simple variable that will hold our venv info.
+Do this by also adding the following to your `.bash_profile` or `.bashrc`:
 
-```
+```sh
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-```
-
-###Create a new environment variable using our function to display the correct env
-
-```
 export VENV="\$(virtualenv_info)"
 ```
 
-###Then insert that variable in your prompt, here is my current PS1. Notice the use of VENV.
+With that, you can use `$VENV` in your `PS1` however you see fit. Here's an example of placing it at the beginning of your prompt, and coloring it yellow:
 
-```
-PS1="\[\033[0;33m\]${VENV}\[\033[0m\]\[\[\033[0;32m\][\w]\[\033[0m\]\$(__git_ps1)\n\[\033[1;36m\]\u\[\033[0;32m\]$ \[\033[0m\]"
+```sh
+PS1="\[\033[0;33m\]${VENV}\[\033[0m\] \w \$(__git_ps1) \u$"
 ```
