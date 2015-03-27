@@ -1,4 +1,4 @@
-## How to (Re)start Postgres After an Ungraceful Reboot
+# How to (Re)start Postgres After an Ungraceful Reboot
 
 If your machine crashes or doesn't get rebooted gracefully, you may experience problems with Postgres when the system comes back up. If Postgres won't start (or you can't connect to it), start by looking for any straggling `.pid` files:
 

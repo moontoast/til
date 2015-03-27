@@ -1,4 +1,4 @@
-## How to Customize the virtualenv Info in Your `PS1`
+# How to Customize the virtualenv Info in Your `PS1`
 
 Start by adding this function to your `.bash_profile` or `.bashrc` file:
 

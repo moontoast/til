@@ -1,4 +1,4 @@
-## How to spin up a flask app in iPython so you can have a shell with app/db context
+# How to spin up a flask app in iPython so you can have a shell with app/db context
 
 This is helpful for playing with different methods or messing around with the ORM
 

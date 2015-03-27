@@ -1,4 +1,4 @@
-## How to Roll Back a Commit
+# How to Roll Back a Commit
 
 I accidentally committed something to develop that needed to be on its own branch.
 To fix this, I created a new branch off the current state of develop (with the accidental commit).
