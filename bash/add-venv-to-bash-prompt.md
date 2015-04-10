@@ -1,6 +1,17 @@
 # How to Customize the virtualenv Info in Your `PS1`
+Start by installing XCode Command Line tools using this terminal command
 
-Start by adding this function to your `.bash_profile` or `.bashrc` file:
+```sh
+xcode-select --install
+```
+
+And add this line before the line containing the PS1 assignment
+
+```sh
+source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
+```
+
+Then, add this function to your `.bash_profile` or `.bashrc` file:
 
 ```sh
 function virtualenv_info() {
@@ -27,5 +38,5 @@ export VENV="\$(virtualenv_info)"
 With that, you can use `$VENV` in your `PS1` however you see fit. Here's an example of placing it at the beginning of your prompt, and coloring it yellow:
 
 ```sh
-PS1="\[\033[0;33m\]${VENV}\[\033[0m\] \w \$(__git_ps1) \u$"
+PS1="\[\033[0;33m\]${VENV}\[\033[0m\]\[\[\033[0;32m\][\w]\[\033[0m\]\$(__git_ps1)\n\[\033[1;36m\]\u\[\033[0;32m\]$ \[\033[0m\]"
 ```
