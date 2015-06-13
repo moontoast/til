@@ -15,6 +15,7 @@ This will remove old versions of `<package>`, but leave all other packages alone
 You may remove multiple packages at the same time by passing multiple to the `cleanup` command, separated by spaces.
 
 If you're a more cautious person, try a dry-run first:
+    
     $> brew cleanup -n
 
 This will tell you what will be deleted, but won't actually delete anything until you remove the `-n`.
